@@ -23,7 +23,7 @@ body
 };
 notes.push(note);
 saveNotes(notes);
- 
+return note; 
 };
 
 var getAll = () => {

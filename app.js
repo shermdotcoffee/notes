@@ -12,7 +12,13 @@ console.log('Command: ', command);
 console.log('Yargs', argv);
 
 if (command === 'add') {
-  notes.addNote(argv.title, argv.body);
+ var note= notes.addNote(argv.title, argv.body);
+ if (note.title===argv.title){
+  console.log("Note ",note.title,"added.  Note contains",note.body);
+}
+ else {console.log("Error.  Note title",note.title,"Already in use");}
+
+
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {
